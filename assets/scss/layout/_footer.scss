@@ -1,0 +1,219 @@
+@use '../abstracts' as *;
+
+// 1. feature strip (cream)  2. main footer (maroon)  3. bottom bar
+$footer-text: rgba(247, 236, 226, .78);
+$footer-line: rgba(214, 183, 126, .22);
+$footer-gold: color('gold-soft');
+
+// ---------- 1. Feature strip ----------
+.#{$prefix}-features {
+    padding-block: 30px;
+    background: color('peach');
+    border-top: 1px solid color('border');
+
+    &-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-block: 10px;
+
+        @include up(lg) {
+            justify-content: center;
+        }
+    }
+
+    &-icon {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        font-size: fs('lg');
+        color: color('maroon');
+        border: 1px solid #D6B77E;
+        border-radius: 50%;
+        @include flex-center;
+    }
+
+    &-title {
+        margin: 0 0 2px;
+        font-size: fs('lg');
+        font-weight: 600;
+        color: color('maroon');
+    }
+
+    &-text {
+        margin: 0;
+        font-size: fs('base');
+        color: color('body');
+    }
+}
+
+// ---------- 2. Main footer ----------
+.#{$prefix}-footer {
+    position: relative;
+    overflow: hidden;
+    color: $footer-text;
+    background: linear-gradient(160deg, #4A0E1C 0%, color('maroon') 55%, #5A1425 100%);
+
+    // faint gold ornaments in the corners
+    &::before,
+    &::after {
+        position: absolute;
+        width: 340px;
+        height: 230px;
+        content: '';
+        background: url('../img/logo/ornament.svg') no-repeat center / contain;
+        opacity: .06;
+        pointer-events: none;
+    }
+
+    &::before {
+        top: 40px;
+        left: -90px;
+        transform: rotate(-20deg);
+    }
+
+    &::after {
+        right: -90px;
+        bottom: 40px;
+        transform: rotate(160deg);
+    }
+
+    a {
+        color: $footer-text;
+
+        &:hover {
+            color: $footer-gold;
+        }
+    }
+
+    &-main {
+        position: relative;
+        z-index: 1;
+        padding-block: 80px 40px;
+
+        @include down(md) {
+            padding-block: 60px 20px;
+        }
+    }
+
+    &-widget {
+        margin-bottom: 40px;
+    }
+
+    &-about {
+        max-width: 300px;
+        margin-top: 20px;
+        font-size: fs('base');
+        line-height: 1.7;
+    }
+
+    &-title {
+        margin-bottom: 22px;
+        font-family: font('body');
+        font-size: fs('base');
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $footer-gold;
+    }
+
+    &-links li {
+        margin-bottom: 12px;
+        font-size: fs('base');
+    }
+
+    // ---------- newsletter ----------
+    &-newsletter {
+        position: relative;
+        margin-block: 18px 22px;
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 0 56px 0 18px;
+            font-size: fs('base');
+            color: color('peach');
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(214, 183, 126, .45);
+            border-radius: $radius-sm;
+            outline: none;
+            @extend %transition;
+
+            @include placeholder {
+                color: color('peach');
+                opacity: .55;
+            }
+
+            &:focus {
+                border-color: $footer-gold;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: fs('lg');
+            color: color('maroon-dark');
+            background: $footer-gold;
+            border: 0;
+            border-radius: $radius-sm;
+            @extend %transition;
+
+            &:hover {
+                background: #E6C98F;
+            }
+        }
+    }
+
+    &-newsletter-msg {
+        margin: -12px 0 16px;
+        font-size: fs('sm');
+        color: $footer-gold;
+    }
+
+    &-social {
+        display: flex;
+        gap: 12px;
+
+        a {
+            width: 38px;
+            height: 38px;
+            font-size: fs('base');
+            border: 1px solid rgba(214, 183, 126, .45);
+            border-radius: 50%;
+            @include flex-center;
+
+            &:hover {
+                color: color('maroon-dark');
+                background: $footer-gold;
+                border-color: $footer-gold;
+            }
+        }
+    }
+
+    // ---------- 3. Bottom bar ----------
+    &-bottom {
+        position: relative;
+        z-index: 1;
+        padding-block: 22px;
+        font-size: fs('sm');
+        border-top: 1px solid $footer-line;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &-legal {
+        display: flex;
+        gap: 28px;
+
+        @include down(md) {
+            gap: 18px;
+            margin-top: 8px;
+        }
+    }
+}

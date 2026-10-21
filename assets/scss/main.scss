@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------
+    Project : Handicraft
+    Build   : npm run watch   (compiles to assets/css/style.css)
+-----------------------------------------------------------------------------------
+
+    1. abstracts   variables, functions, mixins      (no CSS output)
+    2. base        root vars, reset, typography, helpers, spacing
+    3. vendors     overrides for Bootstrap / Swiper / plugins
+    4. components  buttons, section title, forms, cards, preloader ...
+    5. layout      header, mobile menu, footer, sidebar
+    6. pages       page-specific styles
+
+-----------------------------------------------------------------------------------*/
+
+@use 'base';
+@use 'vendors';
+@use 'components';
+@use 'layout';
+@use 'pages';

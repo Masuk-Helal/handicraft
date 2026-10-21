@@ -1,0 +1,6 @@
+// Tools only — outputs no CSS. Every partial starts with:
+// @use '../abstracts' as *;
+@forward 'variables';
+@forward 'functions';
+@forward 'mixins';
+@forward 'placeholders';

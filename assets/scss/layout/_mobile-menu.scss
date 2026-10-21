@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+// Menu items inside the offcanvas (cloned from .hc-menu by main.js)
+.#{$prefix}-mobile-menu {
+    margin-top: 30px;
+
+    li {
+        border-bottom: 1px solid color('border');
+    }
+
+    a {
+        display: block;
+        padding-block: 12px;
+        font-weight: 500;
+        color: color('heading');
+
+        &:hover,
+        &.active {
+            color: color('maroon');
+        }
+
+        i { display: none; }
+    }
+
+    // dropdown items are listed inline, indented
+    .#{$prefix}-submenu {
+        position: static;
+        min-width: 0;
+        padding: 0 0 8px 16px;
+        background: none;
+        border: 0;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        li { border-bottom: 0; }
+
+        a {
+            padding-block: 6px;
+            font-size: fs('base');
+            font-weight: 400;
+            color: color('body');
+        }
+    }
+}

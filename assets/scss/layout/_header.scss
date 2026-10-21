@@ -1,0 +1,325 @@
+@use '../abstracts' as *;
+
+// Announcement bar on top, then one row: [logo | nav | icons].
+// Below lg the nav is hidden and a hamburger appears before the logo.
+//
+// Sticky trick: the whole header is `position: sticky` with a NEGATIVE top
+// equal to the topbar's height, so the topbar scrolls away and only the
+// main row stays pinned. main.js measures the bar and sets --hc-header-offset.
+.#{$prefix}-header {
+    position: sticky;
+    top: calc(var(--#{$prefix}-header-offset, 0px) * -1);
+    z-index: 99;
+    background: color('peach');
+    transition: box-shadow .3s ease;
+
+    // added by main.js once the main row is pinned
+    &.is-sticky {
+        box-shadow: var(--#{$prefix}-shadow);
+    }
+
+    &-inner {
+        padding-inline: 56px;
+
+        @include down(xl) { padding-inline: 30px; }
+        @include down(md) { padding-inline: 16px; }
+    }
+
+    // ---------- main row ----------
+    // No vertical padding on desktop: the logo carries it, and the nav stretches
+    // to the full row height so dropdowns open right at the header's bottom edge.
+    &-main {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        border-bottom: 1px solid color('border');
+
+        @include up(lg) {
+            > .#{$prefix}-logo { margin-block: 14px; }
+        }
+
+        @include down(xl) { gap: 24px; }
+        @include down(lg) {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 12px;
+            padding-block: 12px;
+        }
+    }
+
+    &-toggle {
+        display: none;
+
+        @include down(lg) { display: block; }
+    }
+
+    // ---------- icons ----------
+    &-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 30px;
+        margin-left: auto;
+
+        @include down(xxl) { gap: 22px; }
+        @include down(md) { gap: 16px; }
+    }
+
+    &-icon {
+        position: relative;
+        padding: 0;
+        font-size: fs('xl');
+        line-height: 1;
+        color: color('ink');
+        background: transparent;
+        border: 0;
+
+        &:hover {
+            color: color('maroon');
+        }
+
+        @include down(md) { font-size: fs('lg'); }
+    }
+
+    &-count {
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        font-family: font('body');
+        font-size: fs('xs');
+        font-weight: 600;
+        line-height: 1;
+        color: color('white');
+        background: color('maroon');
+        border: 2px solid color('peach');
+        border-radius: 50%;
+        box-sizing: content-box;
+        @include flex-center;
+
+        @include down(md) {
+            top: -8px;
+            right: -10px;
+            width: 16px;
+            height: 16px;
+            font-size: fs('xs');
+        }
+    }
+
+    // ---------- nav ----------
+    &-nav {
+        flex: 1;
+        align-self: stretch;
+
+        > .#{$prefix}-menu { height: 100%; }
+
+        @include down(lg) {
+            display: none;
+        }
+    }
+}
+
+// ---------- announcement bar ----------
+.#{$prefix}-topbar {
+    color: color('peach');
+    background: color('maroon');
+
+    &-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: 42px;
+        padding-block: 8px;
+
+        @include down(lg) { justify-content: center; }
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 8px;
+        margin: 0;
+        font-size: fs('sm');
+        font-weight: 500;
+        letter-spacing: .3px;
+
+        i {
+            font-size: fs('base');
+            color: color('gold-soft');
+        }
+
+        strong {
+            font-weight: 600;
+            color: color('gold-soft');
+        }
+
+        // only the offer stays on small screens
+        &--side {
+            @include down(lg) { display: none; }
+        }
+
+        @include down(sm) {
+            font-size: fs('xs');
+            letter-spacing: .5px;
+            text-align: center;
+
+            i { display: none; }
+        }
+    }
+
+    &-sep {
+        opacity: .5;
+    }
+}
+
+// thin three-line hamburger (below lg only)
+.#{$prefix}-hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 21px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+
+    span {
+        display: block;
+        height: 2px;
+        background: color('ink');
+        border-radius: $radius-sm;
+        @extend %transition;
+    }
+
+    &:hover span {
+        background: color('maroon');
+    }
+
+    @include down(md) {
+        width: 26px;
+        height: 18px;
+    }
+}
+
+.#{$prefix}-menu {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+
+    @include down(xxl) { gap: 24px; }
+    @include down(xl)  { gap: 18px; }
+
+    > li {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    > li > a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding-block: 14px;
+        font-size: fs('base');
+        font-weight: 500;
+        letter-spacing: .3px;
+        white-space: nowrap;
+        color: color('ink');
+
+        @include down(xxl) { font-size: fs('sm'); letter-spacing: .4px; }
+        @include down(xl)  { font-size: fs('sm'); letter-spacing: .3px; }
+
+        i {
+            font-size: fs('sm');
+            @extend %transition;
+        }
+
+        // underline under the hovered / active item
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            width: 100%;
+            height: 2px;
+            content: '';
+            background: color('maroon');
+            transform: scaleX(0);
+            @extend %transition;
+        }
+
+        &:hover,
+        &.active {
+            color: color('maroon');
+        }
+
+        &:hover::after,
+        &.active::after {
+            transform: scaleX(1);
+        }
+    }
+
+    // highlighted "Sale" link
+    > li > a.#{$prefix}-menu-sale {
+        color: color('primary');
+
+        &::after { background: color('primary'); }
+    }
+
+    // ---------- dropdown ----------
+    > li:hover > .#{$prefix}-submenu,
+    > li:focus-within > .#{$prefix}-submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    > li:hover > a i,
+    > li:focus-within > a i {
+        transform: rotate(180deg);
+    }
+}
+
+.#{$prefix}-submenu {
+    position: absolute;
+    // +1px clears the header's bottom border
+    top: calc(100% + 1px);
+    left: -20px;
+    z-index: 5;
+    min-width: 220px;
+    padding-block: 12px;
+    background: color('white');
+    border-top: 2px solid color('maroon');
+    border-radius: 0 0 $radius $radius;
+    box-shadow: 0 16px 40px rgba(42, 33, 30, .12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    @extend %transition;
+
+    // invisible bridge over the gap so hover isn't lost on the way down
+    &::before {
+        position: absolute;
+        inset: -4px 0 auto;
+        height: 4px;
+        content: '';
+    }
+
+    a {
+        display: block;
+        padding: 8px 20px;
+        font-size: fs('base');
+        color: color('body');
+
+        &:hover {
+            color: color('maroon');
+            background: color('cream');
+        }
+    }
+}

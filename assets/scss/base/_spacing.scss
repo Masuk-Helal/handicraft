@@ -1,0 +1,18 @@
+@use 'sass:math';
+@use '../abstracts' as *;
+
+// .mt-5 … .mt-150, .pb-5 … .pb-150 (step & max in abstracts/_variables.scss)
+// For 0–48px you can also use Bootstrap's .mt-1 … .mt-5
+$properties: (
+    'mt': margin-top,
+    'mb': margin-bottom,
+    'pt': padding-top,
+    'pb': padding-bottom,
+);
+
+@each $short, $property in $properties {
+    @for $i from 2 through math.div($spacer-max, $spacer-step) {
+        $value: $i * $spacer-step;
+        .#{$short}-#{math.div($value, 1px)} { #{$property}: $value; }
+    }
+}

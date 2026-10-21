@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+// Bootstrap is loaded pre-compiled (assets/vendor/bootstrap).
+// Adjust its defaults here instead of editing the vendor file.
+
+.container {
+    @include up(xxl) {
+        max-width: $container-max;
+    }
+}
+
+:root {
+    --bs-primary: #{map.get($colors, 'primary')};
+    --bs-body-font-family: #{font('body')};
+    --bs-body-color: #{color('body')};
+}

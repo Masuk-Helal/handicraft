@@ -1,0 +1,20 @@
+@use 'variables' as *;
+
+// use with @extend %name;
+
+%transition {
+    transition: $transition;
+}
+
+%bg-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+%absolute-fill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}

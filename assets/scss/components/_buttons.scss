@@ -1,0 +1,88 @@
+@use '../abstracts' as *;
+
+// <a class="hc-btn">  |  hc-btn--outline  |  hc-btn--dark
+.#{$prefix}-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 34px;
+    font-size: fs('base');
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: color('white');
+    background: color('primary');
+    border: 1px solid color('primary');
+    border-radius: var(--#{$prefix}-radius);
+    @extend %transition;
+
+    &:hover {
+        color: color('primary');
+        background: transparent;
+    }
+
+    &--outline {
+        color: color('heading');
+        background: transparent;
+        border-color: color('heading');
+
+        &:hover {
+            color: color('white');
+            background: color('heading');
+        }
+    }
+
+    // deep maroon with a thin gold edge (hero / banners)
+    // all variants keep the base geometry (radius, padding, type) and differ
+    // only by colour, so the button reads as one system.
+    &--maroon {
+        color: color('white');
+        background: color('maroon');
+        border-color: #A8784A;
+        box-shadow: 0 4px 14px rgba(106, 22, 40, .18);
+
+        &:hover {
+            color: color('white');
+            background: color('maroon-dark');
+        }
+    }
+
+    // muted gold with maroon text (for dark backgrounds)
+    &--gold {
+        color: color('maroon-dark');
+        background: #C9A263;
+        border-color: #C9A263;
+
+        &:hover {
+            color: color('maroon-dark');
+            background: #DDBB7E;
+            border-color: #DDBB7E;
+        }
+    }
+
+    &--sm {
+        padding: 12px 26px;
+        font-size: fs('sm');
+        letter-spacing: 1px;
+    }
+
+    &--lg {
+        padding: 22px 56px;
+        font-size: fs('lg');
+        letter-spacing: .3px;
+
+        @include down(md) {
+            padding: 16px 40px;
+            font-size: fs('base');
+        }
+    }
+
+    &--dark {
+        background: color('heading');
+        border-color: color('heading');
+
+        &:hover {
+            color: color('heading');
+        }
+    }
+}

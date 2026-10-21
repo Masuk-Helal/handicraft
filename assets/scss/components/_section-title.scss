@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+// <span class="hc-section-subtitle"> + <h2 class="hc-section-title">
+.#{$prefix}-section {
+    &-subtitle {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: fs('sm');
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: color('primary');
+    }
+
+    &-title {
+        margin-bottom: 20px;
+
+        // ——— TITLE ———   (thin line on both sides)
+        &--lines {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            font-size: fs('3xl');
+            font-weight: 500;
+            letter-spacing: .3px;
+            color: color('maroon');
+
+            &::before,
+            &::after {
+                width: 75px;
+                height: 1px;
+                content: '';
+                background: #CDBFB3;
+            }
+
+            @include down(md) {
+                gap: 14px;
+                font-size: fs('xl');
+
+                &::before,
+                &::after { width: 30px; }
+            }
+        }
+
+        // TITLE with a small gold ornament centered underneath
+        &--crest {
+            font-size: fs('3xl');
+            font-weight: 500;
+            letter-spacing: .3px;
+            text-align: center;
+            color: color('maroon');
+
+            &::after {
+                display: block;
+                width: 40px;
+                height: 26px;
+                margin: 8px auto 0;
+                content: '';
+                background: url('../img/logo/ornament.svg') no-repeat center / contain;
+            }
+
+            @include down(md) {
+                font-size: fs('2xl');
+            }
+        }
+
+        // —◇• Title •◇—   (gold ornament divider on both sides)
+        &--ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            font-size: fs('4xl');
+            font-weight: 500;
+            color: color('maroon');
+
+            &::before,
+            &::after {
+                flex-shrink: 0;
+                width: 90px;
+                height: 12px;
+                content: '';
+                background: url('../img/shape/divider.svg') no-repeat center / contain;
+            }
+
+            &::after {
+                transform: scaleX(-1);
+            }
+
+            @include down(md) {
+                gap: 10px;
+                font-size: fs('2xl');
+
+                &::before,
+                &::after { width: 48px; }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as *;
+
+// color('primary')  →  var(--hc-primary)
+@function color($name) {
+    @if not map.has-key($colors, $name) {
+        @error "Unknown color '#{$name}'. Add it to $colors in abstracts/_variables.scss";
+    }
+    @return var(--#{$prefix}-#{$name});
+}
+
+// font('heading')  →  var(--hc-font-heading)
+@function font($name) {
+    @return var(--#{$prefix}-font-#{$name});
+}
+
+// fs('base')  →  16px   (step from the $font-sizes type scale)
+@function fs($name) {
+    @if not map.has-key($font-sizes, $name) {
+        @error "Unknown font size '#{$name}'. Add it to $font-sizes in abstracts/_variables.scss";
+    }
+    @return map.get($font-sizes, $name);
+}
+
+// rem(24px)  →  1.5rem
+@function rem($px, $base: 16px) {
+    @return math.div($px, $base) * 1rem;
+}

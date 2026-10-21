@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+// Pill filter tabs  →  <div class="hc-tabs"><button class="hc-tabs-btn active">
+.#{$prefix}-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 40px;
+
+    @include down(md) {
+        gap: 8px 10px;
+    }
+
+    &-btn {
+        padding: 8px 20px;
+        font-size: fs('base');
+        font-weight: 500;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        color: color('heading');
+        background: transparent;
+        border: 0;
+        border-radius: $radius-pill;
+        @extend %transition;
+
+        &:hover {
+            color: color('maroon');
+        }
+
+        &.active {
+            color: color('white');
+            background: color('maroon');
+        }
+
+        @include down(md) {
+            padding: 6px 14px;
+            font-size: fs('sm');
+        }
+    }
+}

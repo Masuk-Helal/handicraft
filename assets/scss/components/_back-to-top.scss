@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+.#{$prefix}-back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    width: 46px;
+    height: 46px;
+    color: color('white');
+    background: color('primary');
+    border: 0;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    @include flex-center;
+    @extend %transition;
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}

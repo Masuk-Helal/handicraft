@@ -1,0 +1,96 @@
+// =====================================================================
+// Design tokens — change the look of the whole site from this file.
+// Colors/fonts are emitted as CSS custom properties in base/_root.scss
+// =====================================================================
+
+// class & custom-property prefix  →  .hc-btn, var(--hc-primary)
+$prefix: 'hc';
+
+// ---------- Colors ----------
+$colors: (
+    'primary':      #B5651D,   // terracotta
+    'secondary':    #6B8F71,   // sage
+    'sage-dark':    #4A6B50,   // small sage text (stock status) — passes AA on white
+    'accent':       #D9A441,   // mustard
+    'maroon':       #6A1628,   // hero title, buttons, tabs
+    'maroon-dark':  #52101F,   // hover state
+    'ink':          #2A211E,   // hero paragraph text
+    'beige':        #EBDCC9,   // hero background
+    'peach':        #F7ECE2,   // header background
+    'gold':         #B8863A,   // logo ornament
+    'gold-soft':    #D6B77E,   // gold text/borders on dark surfaces (passes AA)
+    'rust':         #9C4A2E,   // offer banners
+    'rust-dark':    #7F3920,   // hover state
+    'heading':      #2B1D14,
+    'body':         #5E5550,
+    'cream':        #FBF6EF,
+    'ivory':        #F8F3EE,   // section backgrounds
+    'sand':         #F1E7DA,
+    'border':       #E8E1D9,
+    'white':        #FFFFFF,
+    'black':        #000000,
+);
+
+// ---------- Typography ----------
+$fonts: (
+    'heading': ('Cormorant Garamond', serif),
+    'body':    ('Jost', sans-serif),
+);
+
+$font-size-base: 16px;
+$line-height-base: 1.7;
+
+// Modular type scale (px). Every `font-size` in the SCSS must use one of
+// these steps via fs('name') — see abstracts/_functions.scss.
+$font-sizes: (
+    'xs':      12px,
+    'sm':      14px,
+    'base':    16px,
+    'lg':      20px,
+    'xl':      24px,
+    '2xl':     30px,
+    '3xl':     36px,
+    '4xl':     44px,
+    '5xl':     56px,
+    'display': 104px,
+);
+
+// h1 → h6  (desktop, mobile) — values are steps from $font-sizes
+$headings: (
+    'h1': (56px, 36px),
+    'h2': (44px, 30px),
+    'h3': (30px, 24px),
+    'h4': (24px, 20px),
+    'h5': (20px, 20px),
+    'h6': (16px, 16px),
+);
+
+// ---------- Breakpoints (same as Bootstrap 5) ----------
+$breakpoints: (
+    'sm':  576px,
+    'md':  768px,
+    'lg':  992px,
+    'xl':  1200px,
+    'xxl': 1400px,
+);
+
+// ---------- Misc ----------
+$container-max: 1320px;
+
+// Corner radii — keep the set small: sm (inputs/badges), md (cards/buttons),
+// pill (tabs/badges), arch (offer photo). Circles use 50%.
+$radius-sm: 3px;
+$radius: 8px;
+$radius-pill: 30px;
+$radius-arch: 137px;
+
+$transition: all .3s ease;
+$shadow: 0 10px 30px rgba(0, 0, 0, .06);
+
+// vertical padding of home page sections (desktop / below md)
+$section-y: 80px;
+$section-y-sm: 56px;
+
+// spacing utilities → .mt-10 .pb-120 ...  (5px steps)
+$spacer-step: 5px;
+$spacer-max: 150px;

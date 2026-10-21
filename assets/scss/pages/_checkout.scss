@@ -1,0 +1,280 @@
+@use '../abstracts' as *;
+
+// checkout.html — cart table, coupon row, order summary
+
+.#{$prefix}-cart {
+    padding-block: 35px $section-y;
+
+    @include down(md) {
+        padding-bottom: $section-y-sm;
+    }
+
+    // Title with a short line centered underneath (same as shop "New Collection")
+    &-title {
+        margin-bottom: 40px;
+        font-size: fs('4xl');
+        font-weight: 500;
+        text-align: center;
+        color: color('heading');
+
+        &::after {
+            display: block;
+            width: 50px;
+            height: 1px;
+            margin: 14px auto 0;
+            content: '';
+            background: color('maroon');
+        }
+
+        @include down(md) {
+            margin-bottom: 28px;
+            font-size: fs('2xl');
+        }
+    }
+
+    // table scrolls sideways on small screens instead of squashing
+    &-table-wrap {
+        overflow-x: auto;
+    }
+
+    &-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+
+        th {
+            padding: 16px 14px;
+            font-size: fs('sm');
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: left;
+            color: color('maroon');
+            background: color('sand');
+        }
+
+        td {
+            padding: 20px 14px;
+            font-size: fs('base');
+            vertical-align: middle;
+            color: color('heading');
+            border-bottom: 1px solid color('border');
+        }
+    }
+
+    &-col-remove {
+        width: 50px;
+    }
+
+    &-remove {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        font-size: fs('base');
+        color: color('body');
+        background: transparent;
+        border: 0;
+        @extend %transition;
+
+        &:hover {
+            color: color('maroon');
+        }
+    }
+
+    &-product {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &-thumb {
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        padding: 6px;
+        background: color('sand');
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    &-name {
+        margin: 0 0 4px;
+        font-family: font('body');
+        font-size: fs('base');
+        font-weight: 500;
+
+        a:hover {
+            color: color('maroon');
+        }
+    }
+
+    &-meta {
+        font-size: fs('sm');
+        color: color('body');
+    }
+
+    &-subtotal {
+        font-weight: 500;
+        color: color('maroon') !important;
+    }
+
+    &-qty {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid color('border');
+        border-radius: $radius-sm;
+
+        button {
+            width: 34px;
+            height: 38px;
+            padding: 0;
+            font-size: fs('sm');
+            color: color('heading');
+            background: transparent;
+            border: 0;
+            @extend %transition;
+
+            &:hover {
+                color: color('maroon');
+            }
+        }
+
+        input {
+            width: 36px;
+            padding: 0;
+            font-size: fs('base');
+            text-align: center;
+            color: color('heading');
+            background: transparent;
+            border: 0;
+            outline: none;
+            -moz-appearance: textfield;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+    }
+
+    // shown by JS when the last row is removed
+    &-empty {
+        display: none;
+        padding: 30px 0;
+        margin: 0;
+        text-align: center;
+
+        a {
+            color: color('maroon');
+            text-decoration: underline;
+        }
+    }
+
+    &.is-empty &-table,
+    &.is-empty &-actions {
+        display: none;
+    }
+
+    &.is-empty &-empty {
+        display: block;
+    }
+
+    &-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    &-coupon {
+        display: flex;
+        gap: 10px;
+
+        .#{$prefix}-input {
+            width: 240px;
+            height: 48px;
+            border-radius: $radius-sm;
+
+            @include down(sm) {
+                width: 100%;
+            }
+        }
+
+        .#{$prefix}-btn {
+            flex-shrink: 0;
+        }
+    }
+
+    &-clear {
+        padding: 0;
+        font-size: fs('sm');
+        font-weight: 500;
+        color: color('heading');
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        background: transparent;
+        border: 0;
+        @extend %transition;
+
+        &:hover {
+            color: color('maroon');
+        }
+    }
+
+    // ---------- Order summary ----------
+    &-summary {
+        padding: 28px;
+        background: color('ivory');
+        border: 1px solid color('border');
+
+        @include up(lg) {
+            position: sticky;
+            top: 100px;
+        }
+
+        &-title {
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            font-size: fs('xl');
+            font-weight: 600;
+            color: color('heading');
+            border-bottom: 1px solid color('border');
+        }
+
+        &-list li {
+            display: flex;
+            justify-content: space-between;
+            padding-block: 7px;
+            font-size: fs('base');
+
+            span:last-child {
+                color: color('heading');
+            }
+        }
+
+        &-total {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 16px;
+            margin-top: 10px;
+            font-size: fs('lg');
+            font-weight: 600;
+            color: color('maroon');
+            border-top: 1px solid color('border');
+        }
+
+        &-btn {
+            justify-content: center;
+            width: 100%;
+            margin-top: 24px;
+        }
+    }
+}

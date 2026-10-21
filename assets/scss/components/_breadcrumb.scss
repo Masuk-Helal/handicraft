@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.#{$prefix}-breadcrumb {
+    padding-block: 120px 100px;
+    text-align: center;
+    background: color('cream');
+    @extend %bg-cover;
+
+    @include down(md) {
+        padding-block: 80px 70px;
+    }
+
+    &-title {
+        margin-bottom: 10px;
+    }
+
+    &-list {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+        li + li::before {
+            margin-right: 8px;
+            content: '/';
+        }
+    }
+}

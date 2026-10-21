@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+// Round category tile: photo in a gold ring → small icon → label
+.#{$prefix}-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-thumb {
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1;
+        padding: 5px;                       // gap between ring and photo
+        border: 1.5px solid #D6B77E;
+        border-radius: 50%;
+        @extend %transition;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 22%;    // keep faces/fabric in frame
+            border-radius: 50%;
+            @extend %transition;
+        }
+    }
+
+    &-icon {
+        margin-top: 16px;
+        font-size: fs('lg');
+        line-height: 1;
+        color: color('maroon');
+    }
+
+    &-title {
+        margin: 8px 0 0;
+        font-size: fs('lg');
+        font-weight: 600;
+        color: color('ink');
+        @extend %transition;
+    }
+
+    &:hover &-thumb {
+        border-color: color('maroon');
+    }
+
+    &:hover &-thumb img {
+        transform: scale(1.04);
+    }
+
+    &:hover &-title {
+        color: color('maroon');
+    }
+
+    @include down(md) {
+        &-icon  { margin-top: 12px; font-size: fs('base'); }
+        &-title { font-size: fs('lg'); }
+    }
+}

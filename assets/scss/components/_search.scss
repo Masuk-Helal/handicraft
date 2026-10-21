@@ -1,0 +1,152 @@
+@use '../abstracts' as *;
+
+// Full-width search panel that slides down from the top of the screen.
+// Opened by [data-search-open], closed by [data-search-close] / Esc (search.js).
+.#{$prefix}-search {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    visibility: hidden;
+    // wait for the slide-up to finish before hiding
+    transition: visibility 0s linear .5s;
+
+    &.is-open {
+        visibility: visible;
+        transition-delay: 0s;
+    }
+
+    // ---------- panel ----------
+    &-panel {
+        position: relative;
+        z-index: 1;
+        padding-block: 40px 70px;
+        background: color('peach');
+        border-bottom: 3px solid color('maroon');
+        box-shadow: 0 20px 50px rgba(42, 33, 30, .15);
+        transform: translateY(-100%);
+        transition: transform .5s cubic-bezier(.77, 0, .18, 1);
+
+        @include down(md) { padding-block: 24px 40px; }
+    }
+
+    &.is-open &-panel {
+        transform: translateY(0);
+    }
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 56px;
+
+        @include down(md) { margin-bottom: 32px; }
+    }
+
+    &-close {
+        padding: 0;
+        font-size: fs('3xl');
+        line-height: 1;
+        color: color('ink');
+        background: transparent;
+        border: 0;
+        @extend %transition;
+
+        &:hover {
+            color: color('maroon');
+            transform: rotate(90deg);
+        }
+
+        @include down(md) { font-size: fs('xl'); }
+    }
+
+    // ---------- form ----------
+    &-form {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid color('border');
+
+        // maroon line that grows under the field while typing
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 1px;
+            content: '';
+            background: color('maroon');
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s ease;
+        }
+
+        &:focus-within::after {
+            transform: scaleX(1);
+        }
+
+        input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px 0;
+            font-family: font('heading');
+            font-size: fs('2xl');
+            color: color('heading');
+            background: transparent;
+            border: 0;
+            outline: 0;
+
+            @include placeholder { color: color('body'); opacity: .7; }
+
+            // hide the browser's own clear button
+            &::-webkit-search-cancel-button { display: none; }
+
+            @include down(md) { font-size: fs('lg'); }
+        }
+
+        button {
+            padding: 0 0 0 16px;
+            font-size: fs('xl');
+            color: color('ink');
+            background: transparent;
+            border: 0;
+
+            &:hover { color: color('maroon'); }
+        }
+    }
+
+    // input lines up after the panel has landed
+    &-form,
+    &-top {
+        opacity: 0;
+        transform: translateY(-12px);
+        transition: opacity .4s ease, transform .4s ease;
+    }
+
+    &.is-open &-top,
+    &.is-open &-form {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .25s;
+    }
+
+    // ---------- backdrop ----------
+    &-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(42, 33, 30, .5);
+        opacity: 0;
+        transition: opacity .5s ease;
+    }
+
+    &.is-open &-backdrop {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .#{$prefix}-search,
+    .#{$prefix}-search * {
+        transition-duration: .01s !important;
+        transition-delay: 0s !important;
+    }
+}

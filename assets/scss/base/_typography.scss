@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+body {
+    font-family: font('body');
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: color('body');
+    background-color: color('white');
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: font('heading');
+    font-weight: 600;
+    line-height: 1.2;
+    color: color('heading');
+}
+
+@each $tag, $sizes in $headings {
+    #{$tag} {
+        font-size: list.nth($sizes, 1);
+
+        @include down(md) {
+            font-size: list.nth($sizes, 2);
+        }
+    }
+}
+
+p {
+    margin-bottom: 15px;
+}

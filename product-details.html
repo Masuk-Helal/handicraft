@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Handmade silk thread bangle set">
+    <title>Silk Thread Bangle Set | Handicraft</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo/ornament.svg">
+
+    <!-- Google Fonts (keep in sync with $fonts in scss/abstracts/_variables.scss) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-pro.min.css">
+    <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="assets/vendor/wow/animate.min.css">
+
+    <!-- Main CSS (compiled from assets/scss) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- preloader -->
+    <div class="hc-preloader"><div class="hc-preloader-spinner"></div></div>
+
+    <!-- back to top -->
+    <button class="hc-back-to-top" aria-label="Back to top"><i class="far fa-arrow-up"></i></button>
+
+    <!-- offcanvas (mobile menu) -->
+    <div class="hc-offcanvas">
+        <div class="d-flex justify-content-between align-items-center">
+            <a class="hc-logo hc-logo--sm" href="index.html">
+                <img class="hc-logo-mark" src="assets/img/logo/ornament.svg" alt="">
+                <span class="hc-logo-name">Heritage</span>
+                <span class="hc-logo-tag">Ethnic Luxury</span>
+            </a>
+            <button class="hc-offcanvas-close" data-offcanvas-close aria-label="Close menu"><i class="far fa-times"></i></button>
+        </div>
+        <nav class="hc-mobile-menu"></nav>
+    </div>
+    <div class="hc-overlay"></div>
+
+    <!-- search panel (slides down, see assets/js/search.js) -->
+    <div class="hc-search" aria-hidden="true">
+        <div class="hc-search-panel" role="dialog" aria-modal="true" aria-label="Search">
+            <div class="hc-header-inner">
+                <div class="hc-search-top">
+                    <a class="hc-logo hc-logo--inline" href="index.html" aria-label="Heritage — home">
+                        <img class="hc-logo-mark" src="assets/img/logo/ornament.svg" alt="">
+                        <span class="hc-logo-name">Heritage</span>
+                        <span class="hc-logo-tag">Ethnic Luxury</span>
+                    </a>
+                    <button class="hc-search-close" data-search-close aria-label="Close search"><i class="fal fa-times"></i></button>
+                </div>
+                <form class="hc-search-form" action="shop.html" role="search">
+                    <input type="search" name="q" placeholder="Search your needs" aria-label="Search products" autocomplete="off">
+                    <button type="submit" aria-label="Submit search"><i class="fal fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="hc-search-backdrop" data-search-close></div>
+    </div>
+
+    <!-- cart drawer (slides in from the right, see assets/js/minicart.js) -->
+    <div class="hc-minicart" aria-hidden="true">
+        <div class="hc-minicart-panel" role="dialog" aria-modal="true" aria-labelledby="hc-minicart-title">
+            <div class="hc-minicart-body">
+                <div class="hc-minicart-top">
+                    <a class="hc-logo hc-logo--inline" href="index.html" aria-label="Heritage — home">
+                        <img class="hc-logo-mark" src="assets/img/logo/ornament.svg" alt="">
+                        <span class="hc-logo-name">Heritage</span>
+                        <span class="hc-logo-tag">Ethnic Luxury</span>
+                    </a>
+                    <button type="button" class="hc-minicart-close" data-minicart-close aria-label="Close cart"><i class="fal fa-times"></i></button>
+                </div>
+
+                <h2 class="hc-minicart-title" id="hc-minicart-title">Your Cart</h2>
+                <p class="hc-minicart-intro">You have <span data-minicart-count>4 items</span> in your cart.</p>
+
+                <div class="hc-minicart-ship">
+                    <span data-minicart-ship></span>
+                    <div class="hc-minicart-ship-bar"><span></span></div>
+                </div>
+
+                <ul class="hc-minicart-list">
+                        <li data-price="349">
+                            <a href="product-details.html" class="hc-minicart-thumb"><img src="assets/img/shop/shop-item-2.png" alt="Handwoven Thread Bracelet" loading="lazy"></a>
+                            <div>
+                                <h3 class="hc-minicart-name"><a href="product-details.html">Handwoven Thread Bracelet</a></h3>
+                                <span class="hc-minicart-meta">Multicolor / M</span>
+                                <div class="hc-minicart-qty">
+                                    <button type="button" data-minicart-step="-1" aria-label="Decrease quantity"><i class="fal fa-minus"></i></button>
+                                    <span data-minicart-qty>2</span>
+                                    <button type="button" data-minicart-step="1" aria-label="Increase quantity"><i class="fal fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="hc-minicart-side">
+                                <span class="hc-minicart-price">$698</span>
+                                <button type="button" class="hc-minicart-remove" aria-label="Remove Handwoven Thread Bracelet">Remove</button>
+                            </div>
+                        </li>
+
+                        <li data-price="899">
+                            <a href="product-details.html" class="hc-minicart-thumb"><img src="assets/img/shop/shop-item-4-removebg-preview.png" alt="Ajrakh Print Cowrie Necklace Set" loading="lazy"></a>
+                            <div>
+                                <h3 class="hc-minicart-name"><a href="product-details.html">Ajrakh Print Cowrie Necklace Set</a></h3>
+                                <span class="hc-minicart-meta">Indigo / Free</span>
+                                <div class="hc-minicart-qty">
+                                    <button type="button" data-minicart-step="-1" aria-label="Decrease quantity"><i class="fal fa-minus"></i></button>
+                                    <span data-minicart-qty>1</span>
+                                    <button type="button" data-minicart-step="1" aria-label="Increase quantity"><i class="fal fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="hc-minicart-side">
+                                <span class="hc-minicart-price">$899</span>
+                                <button type="button" class="hc-minicart-remove" aria-label="Remove Ajrakh Print Cowrie Necklace Set">Remove</button>
+                            </div>
+                        </li>
+
+                        <li data-price="749">
+                            <a href="product-details.html" class="hc-minicart-thumb"><img src="assets/img/shop/shop-item-5-removebg-preview.png" alt="Warli Painted Pendant Set" loading="lazy"></a>
+                            <div>
+                                <h3 class="hc-minicart-name"><a href="product-details.html">Warli Painted Pendant Set</a></h3>
+                                <span class="hc-minicart-meta">Terracotta / Free</span>
+                                <div class="hc-minicart-qty">
+                                    <button type="button" data-minicart-step="-1" aria-label="Decrease quantity"><i class="fal fa-minus"></i></button>
+                                    <span data-minicart-qty>1</span>
+                                    <button type="button" data-minicart-step="1" aria-label="Increase quantity"><i class="fal fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="hc-minicart-side">
+                                <span class="hc-minicart-price">$749</span>
+                                <button type="button" class="hc-minicart-remove" aria-label="Remove Warli Painted Pendant Set">Remove</button>
+                            </div>
+                        </li>
+
+                        <li data-price="1099">
+                            <a href="product-details.html" class="hc-minicart-thumb"><img src="assets/img/shop/shop-item-7-removebg-preview.png" alt="Red Tribal Art Jewelry Set" loading="lazy"></a>
+                            <div>
+                                <h3 class="hc-minicart-name"><a href="product-details.html">Red Tribal Art Jewelry Set</a></h3>
+                                <span class="hc-minicart-meta">Red / Free</span>
+                                <div class="hc-minicart-qty">
+                                    <button type="button" data-minicart-step="-1" aria-label="Decrease quantity"><i class="fal fa-minus"></i></button>
+                                    <span data-minicart-qty>1</span>
+                                    <button type="button" data-minicart-step="1" aria-label="Increase quantity"><i class="fal fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="hc-minicart-side">
+                                <span class="hc-minicart-price">$1,099</span>
+                                <button type="button" class="hc-minicart-remove" aria-label="Remove Red Tribal Art Jewelry Set">Remove</button>
+                            </div>
+                        </li>
+                </ul>
+
+                <div class="hc-minicart-empty">
+                    <i class="fal fa-shopping-cart"></i>
+                    <p>Your cart is empty.</p>
+                    <a href="shop.html" class="hc-btn hc-btn--maroon hc-btn--sm">Start Shopping</a>
+                </div>
+            </div>
+
+            <div class="hc-minicart-foot">
+                <div class="hc-minicart-total"><span>Subtotal</span><strong data-minicart-subtotal></strong></div>
+                <p class="hc-minicart-note">Taxes and shipping calculated at checkout.</p>
+                <div class="hc-minicart-actions">
+                    <a href="checkout.html" class="hc-btn hc-btn--maroon">Proceed to Checkout</a>
+                    <button type="button" class="hc-btn hc-btn--outline" data-minicart-close>Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+        <div class="hc-minicart-backdrop" data-minicart-close></div>
+    </div>
+
+    <!-- header -->
+    <header class="hc-header">
+
+        <!-- announcement bar -->
+        <div class="hc-topbar">
+            <div class="hc-header-inner hc-topbar-inner">
+                <p class="hc-topbar-item hc-topbar-item--side"><i class="fal fa-truck"></i> Free shipping on orders over $2,999</p>
+                <p class="hc-topbar-item"><i class="fal fa-tag"></i> 10% off your first order <span class="hc-topbar-sep">|</span> Use code: <strong>HERITAGE10</strong></p>
+                <p class="hc-topbar-item hc-topbar-item--side"><i class="fal fa-sync-alt"></i> Easy returns within 30 days</p>
+            </div>
+        </div>
+
+        <div class="hc-header-inner hc-header-main">
+            <div class="hc-header-toggle">
+                <button class="hc-hamburger" data-offcanvas-open aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <a class="hc-logo hc-logo--inline" href="index.html" aria-label="Heritage — home">
+                <img class="hc-logo-mark" src="assets/img/logo/ornament.svg" alt="">
+                <span class="hc-logo-name">Heritage</span>
+                <span class="hc-logo-tag">Ethnic Luxury</span>
+            </a>
+
+            <nav class="hc-header-nav" aria-label="Main">
+                <ul class="hc-menu">
+                    <li>
+                        <a href="shop.html" class="active">Shop by Category <i class="far fa-angle-down"></i></a>
+                        <ul class="hc-submenu">
+                            <li><a href="shop.html">Sarees</a></li>
+                            <li><a href="shop.html">Lehengas</a></li>
+                            <li><a href="shop.html">Kurtas</a></li>
+                            <li><a href="shop.html">Jewelry</a></li>
+                            <li><a href="shop.html">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="shop.html">Occasions <i class="far fa-angle-down"></i></a>
+                        <ul class="hc-submenu">
+                            <li><a href="shop.html">Wedding</a></li>
+                            <li><a href="shop.html">Festive</a></li>
+                            <li><a href="shop.html">Party Wear</a></li>
+                            <li><a href="shop.html">Everyday</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">Handcrafted</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html" class="hc-menu-sale">Sale</a></li>
+                </ul>
+            </nav>
+
+            <div class="hc-header-actions">
+                <button type="button" class="hc-header-icon" data-search-open aria-label="Search"><i class="fal fa-search"></i></button>
+                <a href="#" class="hc-header-icon d-none d-sm-inline-block" aria-label="Account"><i class="fal fa-user"></i></a>
+                <a href="checkout.html" class="hc-header-icon" data-minicart-open aria-label="Cart, 4 items">
+                    <i class="fal fa-shopping-cart"></i>
+                    <span class="hc-header-count">4</span>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- product: gallery + info -->
+        <section class="hc-pd">
+            <div class="container hc-container-wide">
+                <div class="row g-4 g-xl-5">
+
+                    <div class="col-lg-6">
+                        <div class="hc-pd-gallery">
+                            <div class="hc-pd-main">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/img/products/curi1-.png" alt="Red silk thread bangles with mirror and cowrie work in a cane basket"></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi2-.png" alt="Mustard silk thread bangles with mirror and pearl work"></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi3-.png" alt="Maroon silk thread bangles with gold sequin scallops"></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi4-.png" alt="Royal blue silk thread bangle with sequin flowers"></div>
+                                    </div>
+                                </div>
+                                <button class="hc-pd-nav hc-pd-nav--prev" aria-label="Previous image"><i class="fal fa-chevron-left"></i></button>
+                                <button class="hc-pd-nav hc-pd-nav--next" aria-label="Next image"><i class="fal fa-chevron-right"></i></button>
+                            </div>
+                            <div class="hc-pd-thumbs">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/img/products/curi1-.png" alt=""></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi2-.png" alt=""></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi3-.png" alt=""></div>
+                                        <div class="swiper-slide"><img src="assets/img/products/curi4-.png" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="hc-pd-info" data-pd-options>
+                            <nav class="hc-pd-trail" aria-label="Breadcrumb">
+                                <ol>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop.html">Jewelry</a></li>
+                                    <li><span aria-current="page">Bangles</span></li>
+                                </ol>
+                            </nav>
+                            <h1 class="hc-pd-title">Silk Thread Bangle Set</h1>
+                            <div class="hc-pd-rating">
+                                <span class="hc-pd-stars" role="img" aria-label="Rated 4.8 out of 5">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </span>
+                                <span>4.8 (245 Reviews)</span>
+                            </div>
+                            <div class="hc-pd-price-row">
+                                <div class="hc-pd-price">$599 <del><span class="visually-hidden">Original price: </span>$799</del></div>
+                                <span class="hc-pd-stock"><i class="fal fa-check" aria-hidden="true"></i> In Stock</span>
+                            </div>
+                            <p class="hc-pd-desc">Hand-wrapped silk thread bangles finished with mirror, pearl and sequin work. Each set is made to order by women artisans in Rajasthan, so no two pieces are exactly alike.</p>
+
+                            <div class="hc-pd-option" data-option-group>
+                                <p class="hc-pd-option-label">Color : <span data-option-value>Red</span></p>
+                                <div class="hc-pd-swatches">
+                                    <button type="button" class="hc-pd-swatch active" style="--swatch: #B3202B" data-value="Red" data-slide="0" aria-label="Red" aria-pressed="true"></button>
+                                    <button type="button" class="hc-pd-swatch" style="--swatch: #E0A020" data-value="Mustard" data-slide="1" aria-label="Mustard" aria-pressed="false"></button>
+                                    <button type="button" class="hc-pd-swatch" style="--swatch: #7E1424" data-value="Maroon" data-slide="2" aria-label="Maroon" aria-pressed="false"></button>
+                                    <button type="button" class="hc-pd-swatch" style="--swatch: #1F3A93" data-value="Royal Blue" data-slide="3" aria-label="Royal Blue" aria-pressed="false"></button>
+                                </div>
+                            </div>
+
+                            <div class="hc-pd-option" data-option-group>
+                                <p class="hc-pd-option-label">Size : <span data-option-value>2.4</span></p>
+                                <div class="hc-pd-sizes">
+                                    <button type="button" class="hc-pd-size" data-value="2.2" aria-pressed="false">2.2</button>
+                                    <button type="button" class="hc-pd-size active" data-value="2.4" aria-pressed="true">2.4</button>
+                                    <button type="button" class="hc-pd-size" data-value="2.6" aria-pressed="false">2.6</button>
+                                    <button type="button" class="hc-pd-size" data-value="2.8" aria-pressed="false">2.8</button>
+                                    <button type="button" class="hc-pd-size" data-value="2.10" aria-pressed="false">2.10</button>
+                                </div>
+                            </div>
+
+                            <div class="hc-pd-option-links">
+                                <a href="#" class="hc-pd-link">View Size Guide</a>
+                                <button type="button" class="hc-pd-link" data-option-clear>Clear</button>
+                            </div>
+
+                            <div class="hc-pd-actions">
+                                <div class="hc-cart-qty">
+                                    <button type="button" data-qty="-1" aria-label="Decrease quantity"><i class="fal fa-minus"></i></button>
+                                    <input type="number" value="1" min="1" inputmode="numeric" aria-label="Quantity">
+                                    <button type="button" data-qty="1" aria-label="Increase quantity"><i class="fal fa-plus"></i></button>
+                                </div>
+                                <a href="checkout.html" class="hc-btn hc-btn--maroon hc-btn--sm">Add to Cart</a>
+                                <a href="checkout.html" class="hc-btn hc-btn--gold hc-btn--sm">Buy Now</a>
+                                <button type="button" class="hc-pd-wish hc-product-wishlist" aria-label="Add to wishlist" aria-pressed="false"><i class="fal fa-heart"></i></button>
+                            </div>
+
+                            <ul class="hc-pd-meta">
+                                <li><span>SKU :</span> HC-BGL-0245</li>
+                                <li><span>Tags :</span> Bangles, Silk Thread, Handmade, Bridal</li>
+                                <li class="hc-pd-share">
+                                    <span>Share :</span>
+                                    <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Share on Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- description / additional information / reviews -->
+        <section class="hc-pd-tabs">
+            <div class="container hc-container-wide">
+                <ul class="hc-pd-tabs-nav nav" role="tablist">
+                    <li role="presentation"><button class="active" id="pd-description-tab" data-bs-toggle="tab" data-bs-target="#pd-description" type="button" role="tab" aria-controls="pd-description" aria-selected="true">Description</button></li>
+                    <li role="presentation"><button id="pd-info-tab" data-bs-toggle="tab" data-bs-target="#pd-info" type="button" role="tab" aria-controls="pd-info" aria-selected="false">Additional Information</button></li>
+                    <li role="presentation"><button id="pd-reviews-tab" data-bs-toggle="tab" data-bs-target="#pd-reviews" type="button" role="tab" aria-controls="pd-reviews" aria-selected="false">Reviews (2)</button></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="pd-description" role="tabpanel" aria-labelledby="pd-description-tab" tabindex="0">
+                        <div class="hc-pd-tabs-text">
+                            <p>Every bangle starts as a plain base that is wrapped by hand in fine silk thread, row by row, until the surface is smooth and even. Our artisans then stitch on mirrors, pearls, cowrie shells and sequins in traditional Rajasthani patterns.</p>
+                            <p>The set is light enough to wear all day and pairs well with sarees, lehengas and kurtas. Store in the pouch provided and keep away from water and perfume to protect the thread's shine.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pd-info" role="tabpanel" aria-labelledby="pd-info-tab" tabindex="0">
+                        <div class="hc-cart-table-wrap">
+                            <table class="hc-pd-table">
+                                <thead>
+                                    <tr><th>Feature</th><th>Description</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Material</td><td>Silk thread, mirror, pearl, sequin</td></tr>
+                                    <tr><td>Size</td><td>2.2, 2.4, 2.6, 2.8, 2.10</td></tr>
+                                    <tr><td>Color</td><td>Red, Mustard, Maroon, Royal Blue</td></tr>
+                                    <tr><td>Pieces</td><td>Set of 6 to 12 (varies by design)</td></tr>
+                                    <tr><td>Country of Origin</td><td>India</td></tr>
+                                    <tr><td>Brand</td><td>Heritage</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="pd-reviews" role="tabpanel" aria-labelledby="pd-reviews-tab" tabindex="0">
+                        <div class="hc-pd-reviews">
+                            <div class="hc-pd-review">
+                                <div class="hc-pd-review-head">
+                                    <strong>Priya S.</strong>
+                                    <span class="hc-pd-stars" role="img" aria-label="5 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                                </div>
+                                <p>Wore the red set at my sister's wedding and got so many compliments. The mirror work catches the light beautifully.</p>
+                            </div>
+                            <div class="hc-pd-review">
+                                <div class="hc-pd-review-head">
+                                    <strong>Ananya R.</strong>
+                                    <span class="hc-pd-stars" role="img" aria-label="4 out of 5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fal fa-star"></i></span>
+                                </div>
+                                <p>Lovely colours and neat finishing. Size 2.4 fit perfectly. Delivery took a few extra days since it is made to order.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- related products -->
+        <section class="hc-related">
+            <div class="container hc-container-wide">
+                <div class="text-center">
+                    <h2 class="hc-section-title hc-section-title--crest">Explore Related Products</h2>
+                </div>
+
+                <div class="hc-related-slider">
+                    <button class="hc-bestsellers-nav hc-bestsellers-nav--prev" aria-label="Previous"><i class="fal fa-chevron-left"></i></button>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-2.png" alt="Handwoven Thread Bracelet" loading="lazy"></a>
+                                        <span class="hc-product-badge">30% off</span>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Handwoven Thread Bracelet</a></h3>
+                                            <div class="hc-product-price">$349 <del>$499</del></div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-3-removebg-preview.png" alt="Gemstone Bead Anklet" loading="lazy"></a>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Gemstone Bead Anklet</a></h3>
+                                            <div class="hc-product-price">$299</div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-4-removebg-preview.png" alt="Ajrakh Print Cowrie Necklace Set" loading="lazy"></a>
+                                        <span class="hc-product-badge">New</span>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Ajrakh Print Cowrie Necklace Set</a></h3>
+                                            <div class="hc-product-price">$899</div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-5-removebg-preview.png" alt="Warli Painted Pendant Set" loading="lazy"></a>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Warli Painted Pendant Set</a></h3>
+                                            <div class="hc-product-price">$749</div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-7-removebg-preview.png" alt="Red Tribal Art Jewelry Set" loading="lazy"></a>
+                                        <span class="hc-product-badge">20% off</span>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Red Tribal Art Jewelry Set</a></h3>
+                                            <div class="hc-product-price">$1,099 <del>$1,399</del></div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="hc-product hc-product--shop">
+                                    <div class="hc-product-thumb">
+                                        <a href="product-details.html"><img src="assets/img/shop/shop-item-8-removebg-preview.png" alt="Hand-Painted Fabric Pendant" loading="lazy"></a>
+                                    </div>
+                                    <div class="hc-product-content">
+                                        <div>
+                                            <h3 class="hc-product-title"><a href="product-details.html">Hand-Painted Fabric Pendant</a></h3>
+                                            <div class="hc-product-price">$549</div>
+                                        </div>
+                                        <button class="hc-product-cart" aria-label="Add to cart"><i class="fal fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <button class="hc-bestsellers-nav hc-bestsellers-nav--next" aria-label="Next"><i class="fal fa-chevron-right"></i></button>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- feature strip -->
+    <section class="hc-features">
+        <div class="container hc-container-wide">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="hc-features-item">
+                        <span class="hc-features-icon"><i class="fal fa-shield-check"></i></span>
+                        <div>
+                            <h4 class="hc-features-title">Secure Payment</h4>
+                            <p class="hc-features-text">100% protected checkout</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="hc-features-item">
+                        <span class="hc-features-icon"><i class="fal fa-undo-alt"></i></span>
+                        <div>
+                            <h4 class="hc-features-title">Easy Returns</h4>
+                            <p class="hc-features-text">14-day return policy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="hc-features-item">
+                        <span class="hc-features-icon"><i class="fal fa-hands-heart"></i></span>
+                        <div>
+                            <h4 class="hc-features-title">Support Artisans</h4>
+                            <p class="hc-features-text">Empowering communities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="hc-features-item">
+                        <span class="hc-features-icon"><i class="fal fa-leaf"></i></span>
+                        <div>
+                            <h4 class="hc-features-title">Ethical &amp; Sustainable</h4>
+                            <p class="hc-features-text">Conscious choices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="hc-footer">
+        <div class="hc-footer-main">
+            <div class="container hc-container-wide">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="hc-footer-widget">
+                            <a class="hc-logo hc-logo--light hc-logo--sm" href="index.html">
+                                <img class="hc-logo-mark" src="assets/img/logo/ornament.svg" alt="">
+                                <span class="hc-logo-name">Heritage</span>
+                                <span class="hc-logo-tag">Ethnic Luxury</span>
+                            </a>
+                            <p class="hc-footer-about">A celebration of traditional craftsmanship, blending timeless heritage with contemporary style — handmade by artisans across India.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <div class="hc-footer-widget">
+                            <h4 class="hc-footer-title">Shop</h4>
+                            <ul class="hc-footer-links">
+                                <li><a href="shop.html">All Collections</a></li>
+                                <li><a href="shop.html">New Arrivals</a></li>
+                                <li><a href="shop.html">Best Sellers</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Size Guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="hc-footer-widget">
+                            <h4 class="hc-footer-title">Help</h4>
+                            <ul class="hc-footer-links">
+                                <li><a href="#">Track Order</a></li>
+                                <li><a href="#">Returns &amp; Exchange</a></li>
+                                <li><a href="#">Shipping Info</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="hc-footer-widget">
+                            <h4 class="hc-footer-title">About</h4>
+                            <ul class="hc-footer-links">
+                                <li><a href="about.html">Our Story</a></li>
+                                <li><a href="about.html">Artisan Stories</a></li>
+                                <li><a href="#">Sustainability</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Press</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="hc-footer-widget">
+                            <h4 class="hc-footer-title">Stay Connected</h4>
+                            <p>Join our community for updates, offers &amp; inspiration.</p>
+                            <form class="hc-footer-newsletter" id="hc-newsletter" data-newsletter>
+                                <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+                                <button type="submit" aria-label="Subscribe"><i class="fal fa-long-arrow-right"></i></button>
+                            </form>
+                            <div class="hc-footer-social">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="hc-footer-bottom">
+            <div class="container hc-container-wide">
+                <div class="d-md-flex justify-content-between align-items-center">
+                    <p>&copy; 2026 Heritage. All rights reserved.</p>
+                    <div class="hc-footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS -->
+    <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendor/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/wow/wow.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/minicart.js"></script>
+</body>
+</html>

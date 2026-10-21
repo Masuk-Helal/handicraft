@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.#{$prefix}-input {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    color: color('heading');
+    background: color('white');
+    border: 1px solid color('border');
+    border-radius: var(--#{$prefix}-radius);
+    outline: none;
+    @extend %transition;
+
+    @include placeholder {
+        color: color('body');
+    }
+
+    &:focus {
+        border-color: color('primary');
+    }
+}
+
+textarea.#{$prefix}-input {
+    height: 160px;
+    padding-block: 15px;
+    resize: none;
+}

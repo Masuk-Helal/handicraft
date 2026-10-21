@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.#{$prefix}-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: color('white');
+    @include flex-center;
+    @extend %transition;
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &-spinner {
+        width: 48px;
+        height: 48px;
+        border: 3px solid color('border');
+        border-top-color: color('primary');
+        border-radius: 50%;
+        animation: hc-spin 1s linear infinite;
+    }
+}
+
+@keyframes hc-spin {
+    to { transform: rotate(360deg); }
+}

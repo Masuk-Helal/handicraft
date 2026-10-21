@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+
+// Light reset on top of Bootstrap's reboot
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    @extend %transition;
+
+    &:hover {
+        color: color('primary');
+    }
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+// keyboard focus only — mouse clicks stay clean
+:focus-visible {
+    outline: 2px solid color('maroon');
+    outline-offset: 3px;
+}
+
+::selection {
+    color: color('white');
+    background: color('primary');
+}

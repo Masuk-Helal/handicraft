@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+// Small helper classes that Bootstrap doesn't ship
+
+.w-img img { width: 100%; }
+.fix { overflow: hidden; }
+.bg-cover { @extend %bg-cover; }
+
+// .#{$prefix}-bg-cream, .#{$prefix}-text-primary ... for every color in $colors
+@each $name, $value in $colors {
+    .#{$prefix}-bg-#{$name}   { background-color: color($name); }
+    .#{$prefix}-text-#{$name} { color: color($name); }
+}
+
+// wider than Bootstrap's 1320px on large screens → <div class="container hc-container-wide">
+.container.#{$prefix}-container-wide {
+    @include up(xxl) {
+        max-width: 1760px;
+        padding-inline: 30px;
+    }
+}
+
+.section-space {
+    padding-block: 120px;
+
+    @include down(lg) { padding-block: 90px; }
+    @include down(md) { padding-block: 70px; }
+}

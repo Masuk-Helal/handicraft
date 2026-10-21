@@ -1,0 +1,9 @@
+node_modules
+.git
+.claude
+.impeccable
+Dockerfile
+.dockerignore
+*.css.map
+.DS_Store
+Thumbs.db

@@ -1,0 +1,8 @@
+// One partial per page. Add a new page → create _page.scss and forward it here.
+@forward 'home';
+@forward 'about';
+@forward 'shop';
+@forward 'product-details';
+@forward 'blog';
+@forward 'contact';
+@forward 'checkout';
